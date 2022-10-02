@@ -73,6 +73,10 @@ public class App {
         int y = scanner.nextInt();
 
         System.out.println("After Swap:");
+        // z.B. x= 12 und y = 2
+        //x = x+y --> 14
+        //y = x-y --> 12
+        //x = x-y --> 2
 
         //System.out.print("x: " + y + "\ny: " + x);
         System.out.println("x: " + y );
@@ -180,15 +184,21 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         //maximal dreistellige ganze Zahl
-        if (number > 999) {
+        String s = String.valueOf(number);
+        //s.Length
+        if (s.length() > 3) {
             System.out.println("Geben Sie eine gültige max. dreistellige ganze Zahl an!");
-        } else {
-            int z1 = number % 10; //letzte Ziffer
-            int z2 = number / 10; //z.B. 12
+        }
+        //man könnte für jede Zahl das anders berechnen
+        //sprich für eine zweistellige oder einstellige Zahl
+        else {
+            //z.B 123
+            int z1 = number % 10; //letzte Ziffer --> 3
+            int z2 = number / 10; //hier wird durch Int, die kommazahl getrennt --> 12
             int z3 = z2 % 10 ; // zweite Ziffer --> 2
             int z4 = z2 /10; // erste Ziffer --> 1
             // 1*100, 2*10, 3*1
-            //3*100 + 2*10 + 1*1
+            // 3*100 + 2*10 + 1*1
             System.out.println(z1*100+z3*10+z4*1);
         }
     }
